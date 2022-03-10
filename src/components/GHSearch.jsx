@@ -9,8 +9,14 @@ const GHSearch = () => {
 
   const fetchUsers = async () => {
     const response = await axios.get(
-      'https://api.github.com/search/users?gsim1903',
+      'https://api.github.com/search/users?', 
+      { params: {
+           accept: 'application/vnd.github.v3+json',
+          q: "gsim1903"
+        },
+      },
     )
+
     setUsers(response.data.items)
   }
 
@@ -18,7 +24,6 @@ const GHSearch = () => {
     return (
       <li key={user.id}>
         <GHSearchDisplay user={user} />
-        {searchTerm}
       </li>
     )
   })
@@ -30,10 +35,15 @@ const GHSearch = () => {
         type="text"
         name="search"
         placeholder="Input Git Hub username"
-        onChange={(x)=> setsearchTerm(x.target.value)}
+        onChange={(x) => setsearchTerm(x.target.value)}
       />
-      <Button data-cy="search-button" name="search" onClick={() => fetchUsers()}>
-        Search</Button>
+      <Button
+        data-cy="search-button"
+        name="search"
+        onClick={() => fetchUsers()}
+      >
+        Search
+      </Button>
       <ul data-cy="gitlist">{gitList}</ul>
     </>
   )
