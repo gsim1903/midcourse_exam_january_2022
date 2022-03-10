@@ -1,10 +1,14 @@
 import React from 'react'
-// import List from 'semantic-ui'
+import {Image} from 'semantic-ui-react'
 
 
 const GHSearchDisplay = ({user}) => {
   return (
-      <h2>{user.login}</h2>
+    <div>
+      <h2 data-cy='userlogin'> {user.login}</h2>
+      <Image data-cy='useravatar'> src={user.avatar_url}</Image>
+      <h2 data-cy='userlink'> {user.login}</h2>
+      </div>
   )
 }
 

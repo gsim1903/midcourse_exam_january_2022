@@ -12,7 +12,7 @@ const GHSearch = () => {
       'https://api.github.com/search/users?', 
       { params: {
            accept: 'application/vnd.github.v3+json',
-          q: "gsim1903"
+          q: `${searchTerm}`
         },
       },
     )

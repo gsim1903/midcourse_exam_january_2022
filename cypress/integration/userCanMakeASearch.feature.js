@@ -21,11 +21,23 @@ describe('User can make a search inquiry', () => {
     cy.get('[data-cy=search-box]').should('exist')
   })
 
-  it('is expected to see barrack as the top search result', () => {
+  it('is expected to see gsim1903 as the top search result', () => {
     cy.get('[data-cy=gitlist]').first().should('contain', 'gsim1903')
   })
+
+  it('it is expected to have a profile image',() => {
+  cy.get('[data-cy=useravatar]').should('exist')
+})
+
+  it('it is expected to have a profile link',() => {
+  cy.get('[data-cy=userlink]').should('exist')}
+  )
+
 
   it('is expected to have three search results ', () => {
     cy.get('[data-cy=gitlist]').children().should('have.length', 1)
   })
+
+
+
 })
