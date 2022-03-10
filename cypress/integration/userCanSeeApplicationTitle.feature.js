@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 describe('Application main view', () => {
   beforeEach(() => {
     cy.visit('/')
