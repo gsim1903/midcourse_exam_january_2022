@@ -1,14 +1,14 @@
 import React from 'react'
-import {Image} from 'semantic-ui-react'
+import {Card, Image} from 'semantic-ui-react'
 
 
 const GHSearchDisplay = ({user}) => {
   return (
-    <div>
-      <h2 data-cy='userlogin'> {user.login}</h2>
-      <Image data-cy='useravatar'> src={user.avatar_url}</Image>
-      <h2 data-cy='userlink'> {user.login}</h2>
-      </div>
+    <Card>
+    <Image data-cy='useravatar'src={user.avatar_url} wrapped ui={false} as="a" href={user.html_url} target={user.html_url} />
+      <Card.Header data-cy='userlogin'> User -  {user.login} </Card.Header>
+      <h2 data-cy='userlink'> </h2>
+      </Card>
   )
 }
 

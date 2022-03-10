@@ -34,7 +34,7 @@ describe('User can make a search inquiry', () => {
   )
 
 
-  it('is expected to have three search results ', () => {
+  it('is expected to have one search results ', () => {
     cy.get('[data-cy=gitlist]').children().should('have.length', 1)
   })
 
